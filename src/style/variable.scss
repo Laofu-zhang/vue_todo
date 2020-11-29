@@ -1,0 +1,36 @@
+$boxShadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1); // 边框虚影
+$borderRadius: 5px; // 圆角
+$borderRadius_15: 15px; // 15度圆角
+$borderCirCle: 50%; // 圆
+$maskColor: rgba(59, 59, 59, 0.1);
+// margin padding
+$directions: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+);
+$dimensions: (
+  'p': 'padding',
+  'm': 'margin',
+);
+//获取padding margin间隔
+@each $dim in $dimensions {
+  //循环四个方向
+  @each $dir in $directions {
+    @for $i from 1 through 5 {
+      $size: $i * 5;
+      .#{nth($dim,1)}-#{nth($dir,1)}-#{$size} {
+        #{nth($dim,2)}-#{nth($dir,2)}: #{$size}px;
+      }
+    }
+  }
+}
+// 颜色
+$colorGrid: rgb(190, 190, 190);
+$colorWhite: rgb(250, 250, 250);
+// 背景色
+$bg_white: rgb(250, 250, 250);
+$bg_error: rgb(226, 75, 75);
+$bg_purple: rgb(183, 75, 226);
+$bg_success: rgb(83, 245, 204);
